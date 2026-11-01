@@ -1,8 +1,8 @@
 (define (domain drones)
     (:requirements :strips :typing :negative-preconditions :conditional-effects :action-costs)
     (:types
-        drone location supply level ;- object
-        ;medkit water comms - supply ; these are subtypes of supply
+        drone location supply level - object
+        medkit water comms - supply ; these are subtypes of supply
     )
     (:functions
         (total-cost) - number
@@ -16,11 +16,13 @@
         (battery ?d - drone ?l - level)
         (flight-cost ?from ?to - location ?c - level)
         (battery-after ?before ?cost ?left - level)
+        (next-battery-level ?before ?post - level)
         (maximum-level ?l - level)
         (carrying ?d - drone ?what - supply)
         (delivered ?what - supply)
         (is-charge-station ?where - location)
         (unlocked-by-inspection ?x ?y - location)
+        (unlocked-by-delivery ?what - supply ?where - location)
         (inspected ?where - location)
         (needs ?what - supply ?where - location)
         (empty ?drone - drone)
@@ -81,6 +83,7 @@
             (has-supply ?what ?where)
             (delivered ?what)
             (empty ?d)
+            (forall (?y - location) (when (unlocked-by-delivery ?what ?y) (accessible ?y)))
         )
     )
 
