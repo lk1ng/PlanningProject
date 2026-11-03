@@ -2,7 +2,6 @@
     (:requirements :strips :typing :negative-preconditions :conditional-effects :action-costs)
     (:types
         drone location supply level - object
-        medkit water comms - supply ; these are subtypes of supply
     )
     (:predicates
         (at ?d - drone ?where - location)
@@ -12,7 +11,7 @@
         (battery ?d - drone ?l - level)
         (flight-cost ?from ?to - location ?c - level)
         (battery-after ?before ?cost ?left - level)
-        (next-battery-level ?before ?post - level)
+        (next-battery-level ?before ?post - level) ; not relevant to this model, but included for compatibility
         (maximum-level ?l - level)
         (carrying ?d - drone ?what - supply)
         (delivered ?what - supply)
@@ -27,6 +26,8 @@
         (total-cost) - number
         (distance ?from ?to - location) - number ; static: never changed by any action
     )
+
+    ; drone can fly from its current location to a connected location, expending "c" battery to go from "before" to "left" level.
     (:action fly
     :parameters (?d - drone ?from ?to - location ?before ?c ?left - level)
     :precondition (and

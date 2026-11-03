@@ -2,7 +2,6 @@
     (:requirements :strips :typing :negative-preconditions :conditional-effects :action-costs)
     (:types
         drone location supply level ;- object
-        medkit water comms - supply ; these are subtypes of supply
     )
     (:predicates
         (at ?d - drone ?where - location)
@@ -13,7 +12,7 @@
         (flight-cost ?from ?to - location ?c - level)
         (battery-after ?before ?cost ?left - level)
         (next-battery-level ?before ?post - level)
-        (maximum-level ?l - level)
+        (maximum-level ?l - level) ; not relevant to this model, but included for compatibility
         (carrying ?d - drone ?what - supply)
         (delivered ?what - supply)
         (is-charge-station ?where - location)

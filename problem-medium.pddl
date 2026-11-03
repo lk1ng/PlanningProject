@@ -2,9 +2,7 @@
     (:domain drones)
     (:objects
         depot charge-station1 charge-station2 site1 site2 site3 site4 site5 - location
-        comms1 - comms
-        water1 - water
-        medkit1 - medkit
+        comms1 water1 medkit1 - supply
         b0 b1 b2 b3 b4 b5 b6 - level
         drone1 drone2 - drone
     )
