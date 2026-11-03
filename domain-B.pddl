@@ -4,10 +4,6 @@
         drone location supply level ;- object
         medkit water comms - supply ; these are subtypes of supply
     )
-    (:functions
-        (total-cost) - number
-        (distance ?from ?to - location) - number ; static: never changed by any action
-    )
     (:predicates
         (at ?d - drone ?where - location)
         (has-supply ?what - supply ?where - location)
@@ -26,6 +22,10 @@
         (inspected ?where - location)
         (needs ?what - supply ?where - location)
         (empty ?drone - drone)
+    )
+    (:functions
+        (total-cost) - number
+        (distance ?from ?to - location) - number ; static: never changed by any action
     )
     (:action fly
     :parameters (?d - drone ?from ?to - location ?before ?c ?left - level)

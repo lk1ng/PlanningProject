@@ -1,0 +1,142 @@
+Type-checking fly
+...action passes type checking.
+Type-checking inspect
+...action passes type checking.
+Type-checking pick-up-supply
+...action passes type checking.
+Type-checking deliver-supply
+...action passes type checking.
+Type-checking recharge
+...action passes type checking.
+Checking plan: plans/domain-A_problem-small_lama.1
+Plan to validate:
+
+Plan size: 13
+1:
+(pick-up-supply drone1 depot comms1)
+ 
+2:
+(fly drone1 depot site1 b4 b1 b3)
+ 
+3:
+(inspect drone1 site1)
+ 
+4:
+(fly drone1 site1 site2 b3 b1 b2)
+ 
+5:
+(inspect drone1 site2)
+ 
+6:
+(fly drone1 site2 site3 b2 b1 b1)
+ 
+7:
+(deliver-supply drone1 site3 comms1)
+ 
+8:
+(fly drone1 site3 charge-station b1 b1 b0)
+ 
+9:
+(recharge drone1 charge-station b0 b4)
+ 
+10:
+(fly drone1 charge-station site3 b4 b1 b3)
+ 
+11:
+(fly drone1 site3 site2 b3 b1 b2)
+ 
+12:
+(fly drone1 site2 site1 b2 b1 b1)
+ 
+13:
+(fly drone1 site1 depot b1 b1 b0)
+ 
+
+Plan Validation details
+-----------------------
+
+Checking next happening (time 1)
+Deleting (has-supply comms1 depot)
+Deleting (empty drone1)
+Adding (carrying drone1 comms1)
+
+Checking next happening (time 2)
+Deleting (at drone1 depot)
+Deleting (battery drone1 b4)
+Adding (at drone1 site1)
+Adding (battery drone1 b3)
+Updating (total-cost) (0) by 1 increase
+
+Checking next happening (time 3)
+Adding (inspected site1)
+
+Checking next happening (time 4)
+Deleting (at drone1 site1)
+Deleting (battery drone1 b3)
+Adding (at drone1 site2)
+Adding (battery drone1 b2)
+Updating (total-cost) (1) by 1 increase
+
+Checking next happening (time 5)
+Adding (inspected site2)
+
+Checking next happening (time 6)
+Deleting (at drone1 site2)
+Deleting (battery drone1 b2)
+Adding (at drone1 site3)
+Adding (battery drone1 b1)
+Updating (total-cost) (2) by 1 increase
+
+Checking next happening (time 7)
+Deleting (carrying drone1 comms1)
+Deleting (needs comms1 site3)
+Adding (has-supply comms1 site3)
+Adding (delivered comms1)
+Adding (empty drone1)
+
+Checking next happening (time 8)
+Deleting (at drone1 site3)
+Deleting (battery drone1 b1)
+Adding (at drone1 charge-station)
+Adding (battery drone1 b0)
+Updating (total-cost) (3) by 1 increase
+
+Checking next happening (time 9)
+Deleting (battery drone1 b0)
+Adding (battery drone1 b4)
+
+Checking next happening (time 10)
+Deleting (at drone1 charge-station)
+Deleting (battery drone1 b4)
+Adding (at drone1 site3)
+Adding (battery drone1 b3)
+Updating (total-cost) (4) by 1 increase
+
+Checking next happening (time 11)
+Deleting (at drone1 site3)
+Deleting (battery drone1 b3)
+Adding (at drone1 site2)
+Adding (battery drone1 b2)
+Updating (total-cost) (5) by 1 increase
+
+Checking next happening (time 12)
+Deleting (at drone1 site2)
+Deleting (battery drone1 b2)
+Adding (at drone1 site1)
+Adding (battery drone1 b1)
+Updating (total-cost) (6) by 1 increase
+
+Checking next happening (time 13)
+Deleting (at drone1 site1)
+Deleting (battery drone1 b1)
+Adding (at drone1 depot)
+Adding (battery drone1 b0)
+Updating (total-cost) (7) by 1 increase
+Plan executed successfully - checking goal
+Plan valid
+Final value: 8 
+
+Successful plans:
+Value: 8
+ plans/domain-A_problem-small_lama.1 8 
+
