@@ -17,6 +17,7 @@
         (connected site2 charge-station1) (connected charge-station1 site2) (flight-cost site2 charge-station1 b1) (flight-cost charge-station1 site2 b1)
         (connected site2 site5) (connected site5 site2) (flight-cost site2 site5 b1) (flight-cost site5 site2 b1)
         (connected site3 site4) (connected site4 site3) (flight-cost site4 site3 b1) (flight-cost site3 site4 b1)
+        (connected site4 site5) (connected site5 site4) (flight-cost site4 site5 b1) (flight-cost site5 site4 b1)
         (connected site4 charge-station2) (connected charge-station2 site4) (flight-cost site4 charge-station2 b1) (flight-cost charge-station2 site5 b1)
         (= (distance depot site1) 1) (= (distance site1 depot) 1) (= (distance depot charge-station1) 1) (= (distance charge-station1 depot) 1)
         (= (distance site1 site2) 2) (= (distance site2 site1) 2)

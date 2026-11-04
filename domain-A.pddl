@@ -54,6 +54,7 @@
         :effect (and
             (inspected ?where)
             (forall (?y - location) (when (unlocked-by-inspection ?where ?y) (accessible ?y)))
+            (increase (total-cost) 1)
         )
     )
 
@@ -68,6 +69,7 @@
             (not (has-supply ?what ?where))
             (carrying ?d ?what)
             (not (empty ?d))
+            (increase (total-cost) 1)
         )
     )
 
@@ -85,6 +87,7 @@
             (delivered ?what)
             (empty ?d)
             (forall (?y - location) (when (unlocked-by-delivery ?what ?y) (accessible ?y)))
+            (increase (total-cost) 1)
         )
     )
 
@@ -99,6 +102,7 @@
         :effect (and 
             (not (battery ?d ?before))
             (battery ?d ?post)
+            (increase (total-cost) 1)
         )
     )
 )

@@ -59,33 +59,36 @@ Checking next happening (time 1)
 Deleting (has-supply comms1 depot)
 Deleting (empty drone1)
 Adding (carrying drone1 comms1)
+Updating (total-cost) (0) by 1 increase
 
 Checking next happening (time 2)
 Deleting (at drone1 depot)
 Deleting (battery drone1 b4)
 Adding (at drone1 site1)
 Adding (battery drone1 b3)
-Updating (total-cost) (0) by 1 increase
+Updating (total-cost) (1) by 1 increase
 
 Checking next happening (time 3)
 Adding (inspected site1)
+Updating (total-cost) (2) by 1 increase
 
 Checking next happening (time 4)
 Deleting (at drone1 site1)
 Deleting (battery drone1 b3)
 Adding (at drone1 site2)
 Adding (battery drone1 b2)
-Updating (total-cost) (1) by 1 increase
+Updating (total-cost) (3) by 1 increase
 
 Checking next happening (time 5)
 Adding (inspected site2)
+Updating (total-cost) (4) by 1 increase
 
 Checking next happening (time 6)
 Deleting (at drone1 site2)
 Deleting (battery drone1 b2)
 Adding (at drone1 site3)
 Adding (battery drone1 b1)
-Updating (total-cost) (2) by 1 increase
+Updating (total-cost) (5) by 1 increase
 
 Checking next happening (time 7)
 Deleting (carrying drone1 comms1)
@@ -93,50 +96,52 @@ Deleting (needs comms1 site3)
 Adding (has-supply comms1 site3)
 Adding (delivered comms1)
 Adding (empty drone1)
+Updating (total-cost) (6) by 1 increase
 
 Checking next happening (time 8)
 Deleting (at drone1 site3)
 Deleting (battery drone1 b1)
 Adding (at drone1 charge-station)
 Adding (battery drone1 b0)
-Updating (total-cost) (3) by 1 increase
+Updating (total-cost) (7) by 1 increase
 
 Checking next happening (time 9)
 Deleting (battery drone1 b0)
 Adding (battery drone1 b4)
+Updating (total-cost) (8) by 1 increase
 
 Checking next happening (time 10)
 Deleting (at drone1 charge-station)
 Deleting (battery drone1 b4)
 Adding (at drone1 site3)
 Adding (battery drone1 b3)
-Updating (total-cost) (4) by 1 increase
+Updating (total-cost) (9) by 1 increase
 
 Checking next happening (time 11)
 Deleting (at drone1 site3)
 Deleting (battery drone1 b3)
 Adding (at drone1 site2)
 Adding (battery drone1 b2)
-Updating (total-cost) (5) by 1 increase
+Updating (total-cost) (10) by 1 increase
 
 Checking next happening (time 12)
 Deleting (at drone1 site2)
 Deleting (battery drone1 b2)
 Adding (at drone1 site1)
 Adding (battery drone1 b1)
-Updating (total-cost) (6) by 1 increase
+Updating (total-cost) (11) by 1 increase
 
 Checking next happening (time 13)
 Deleting (at drone1 site1)
 Deleting (battery drone1 b1)
 Adding (at drone1 depot)
 Adding (battery drone1 b0)
-Updating (total-cost) (7) by 1 increase
+Updating (total-cost) (12) by 1 increase
 Plan executed successfully - checking goal
 Plan valid
-Final value: 8 
+Final value: 13 
 
 Successful plans:
-Value: 8
- plans/domain-A_problem-small_lama.1 8 
+Value: 13
+ plans/domain-A_problem-small_lama.1 13 
 
