@@ -1,5 +1,5 @@
 (define (domain drones)
-    (:requirements :strips :typing :negative-preconditions :conditional-effects :action-costs)
+    (:requirements :strips :typing :conditional-effects :action-costs)
     (:types
         drone location supply level ;- object
     )
@@ -89,18 +89,19 @@
         )
     )
 
+    ; drone increases its battery level by 1 level at charging station
     (:action recharge
         :parameters (?d - drone ?where - location ?before - level ?post - level)
         :precondition (and 
-            (is-charge-station ?where)
-            (at ?d ?where)
-            (next-battery-level ?before ?post)
-            (battery ?d ?before)
+            (is-charge-station ?where) ; ?where is charging station
+            (at ?d ?where) ; drone is at ?where
+            (next-battery-level ?before ?post) ; ?post is one level above ?before
+            (battery ?d ?before) ; drone currently has battery level of ?before
         )
         :effect (and 
-            (not (battery ?d ?before))
-            (battery ?d ?post)
-            (increase (total-cost) 1)
+            (not (battery ?d ?before)) ; drone no longer has battery level of ?before
+            (battery ?d ?post) ; drone now has battery level of ?post
+            (increase (total-cost) 1) ; increment total cost by 1
         )
     )
 )
