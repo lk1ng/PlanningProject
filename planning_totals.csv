@@ -1,0 +1,9 @@
+Instance,Domain model,Planner,Total Runtime (s),Total Expanded States
+small,A,LAMA,0.011602,419
+small,B,LAMA,0.006862,616
+medium,A,LAMA,7.357086,679188
+medium,B,LAMA,21.835489,2579165
+large,A,LAMA,299.77*,At least 15613133
+large,B,LAMA,300.27*,At least 53397
+large-1drone,A,LAMA,0.160029,25599
+large-1drone,B,LAMA,0.167880,23695

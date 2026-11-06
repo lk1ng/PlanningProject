@@ -34,3 +34,26 @@ large-1drone & B & LAMA final & Yes & 0.065255 & 62 & 66 & 8788 \\
 \caption{Planning experiment results. LAMA reports its first plan and, when distinct, its final plan found before stopping. The final plan is the best found in that run; the planner had a five-minute time limit. Runtime is elapsed time at plan discovery; expanded states for LAMA are cumulative through that plan.}
 \label{tab:planning-results}
 \end{table}
+
+% Requires \usepackage{graphicx}
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllrr}
+\hline
+Instance & Domain model & Planner & Total Runtime (s) & Total Expanded States \\
+\hline
+small & A & LAMA & 0.011602 & 419 \\
+small & B & LAMA & 0.006862 & 616 \\
+medium & A & LAMA & 7.357086 & 679188 \\
+medium & B & LAMA & 21.835489 & 2579165 \\
+large & A & LAMA & 299.77* & At least 15613133 \\
+large & B & LAMA & 300.27* & At least 53397 \\
+large-1drone & A & LAMA & 0.160029 & 25599 \\
+large-1drone & B & LAMA & 0.167880 & 23695 \\
+\hline
+\end{tabular}}
+\caption{Total LAMA search runtime and expanded states at run termination. Compare these whole-run totals with the final-plan rows in the companion table to see the extra search after the final plan was found. Runtime is Fast Downward's total search time; * marks the wrapper planner time used when an externally interrupted search did not report its own total. For interrupted runs, expanded states are lower bounds from completed phase summaries and the latest progress checkpoint.}
+\label{tab:planning-totals}
+\end{table}
