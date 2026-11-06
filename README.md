@@ -1,5 +1,7 @@
 # Commands run in planning experiments
 
+Below are the commands run to create and validate plans for each of small, medium, large, and large-1drone problems. First, every problem is run with both algorithms on domain A and the plan validated afterwards; next, everything is repeated on domain B. Performing these steps requires downloading and building Fast Downward 26.6 source code to use the python program, and for the directory containing VAL's Validate to be added to your PATH variable.
+
 ```sh
 python3 fast-downward-26.6/fast-downward.py --alias lama --overall-time-limit 5m --plan-file plans/domain-A_problem-small_lama domain-A.pddl problem-small.pddl > planner_outputs/domain-A_problem-small_lama.txt
 Validate -v domain-A.pddl problem-small.pddl plans/domain-A_problem-small_lama.1 > validations/domain-A_problem-small_lama_first.txt 2>&1
@@ -47,6 +49,3 @@ Validate -v domain-B.pddl problem-large-1drone.pddl plans/domain-B_problem-large
 python3 fast-downward-26.6/fast-downward.py --overall-time-limit 5m --plan-file plans/domain-B_problem-large-1drone_astar-lmcut domain-B.pddl problem-large-1drone.pddl --search 'astar(lmcut())' > planner_outputs/domain-B_problem-large-1drone_astar-lmcut.txt
 Validate -v domain-B.pddl problem-large-1drone.pddl plans/domain-B_problem-large-1drone_astar-lmcut > validations/domain-B_problem-large-1drone_astar-lmcut.txt 2>&1
 ```
-
-The LAMA final-plan numbers shown above are from the recorded run; they can
-change when the planner produces a different number of plans.
